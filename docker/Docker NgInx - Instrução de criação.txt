@@ -1,0 +1,45 @@
+## Criando um container NgInx (Docker Hub)
+
+docker run --rm  --name=nginx -p8080:80 nginx
+
+## Remover container
+docker rm -f nginx
+ 
+ 
+## Comando Docker - bash 
+docker exec -it nginx bash
+--> Pasta com index.html --> /usr/share/nginx/html
+
+
+## Ferramenta de update 
+## Instalando vim - um editor de texto 
+apt update
+apt install vim 
+
+
+
+##Build image docker 
+docker build -t educleite/nginx-video-aula:latest . 
+
+## Rodar imagem buildada (-d detached - rodar sem container)
+docker run --rm -d -p 8080:80 educleite/nginx-video-aula:latest      
+​docker run --rm -d -p 8080:80 wesleywillians/nginx-fc:latest
+
+
+## Docker compose 
+
+docker-compose up -d
+docker-compose down
+
+
+
+## Docker build -- buildando na minha docker id, um container com golang
+docker build -t educleite/goserver-example:latest .
+
+docker push educleite/goserver-example:latest  
+
+docker run --rm -d -p 8080:8080 educleite/goserver-example:latest
+
+## docker example
+docker run -p 8080:8080 wesleywillians/goserver-example
+
